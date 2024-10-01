@@ -1,0 +1,1 @@
+This Repository contains a selection of directories generated during completion of various project given by ALX Africa to the selected few students of Cohort 22 who made it to specialization.
