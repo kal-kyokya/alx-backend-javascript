@@ -1,7 +1,7 @@
 export default function getSumOfHoods(
   initialNumber,
-  expansion1999 = 25,
-  expansion2003 = 21,
+  expansion1989 = 89,
+  expansion2019 = 19,
 ) {
-  return initialNumber + expansion1999 + expansion2003;
+  return initialNumber + expansion1989 + expansion2019;
 }
