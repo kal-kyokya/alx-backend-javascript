@@ -1,24 +1,27 @@
-# 0x00. ES6 Basics
+# 0x01. ES6 Promises
 
-This directory is home to all files required for successful completion of the first backend Specialization project given by ALX Africa to its Software Engineering program and focuses on basic concepts aassociated with Javascript.
+This directory is home to all files required for successful completion of the second backend Specialization project given by ALX Africa to its Software Engineering program and focuses on the concept of Promises in Modern Javascript.
 
 ## Requirements
 ### General
 
 	->	All files will be executed on:
-			Ubuntu 18.04 LTS
+			* Ubuntu 18.04 LTS
 				using:
-					NodeJS 12.11.x
+					* NodeJS 12.11.x
 	->	Allowed editors:
-			vi, vim, emacs, Visual Studio Code
+			* vi,
+			* vim,
+			* emacs,
+			* Visual Studio Code
 	->	All files should end with a new line
 	->	A README.md file, at the root of the folder of the project, is mandatory
 	->	All code should use:
-			The js extension
+			* The js extension
 	->	All code will be tested using:
-			The Jest Testing Framework
-	->	All code will be analyzed using:
-			The linter ESLint along with specific rules that will be provided
+			* The Jest Testing Framework
+	->	All code will be analyzed using the linter:
+			* ESLint
 	->	All functions must be exported
 
 ## Setup
@@ -42,7 +45,7 @@ In the project directory, install:
 * Babel
 * ESList
 
-...by using the package.json file and running npm install.
+...by using package.json file and running npm install.
 
 ### Important
 To not forget to run npm install from the terminal of the project folder to install all necessary project dependencies.
