@@ -13,5 +13,5 @@ export default function handleProfileSignup() {
 
       console.log(str);
     })
-    .catch(() => new Error('Somethinf went terribly wrong !'));
+    .catch(() => console.log('Signup system offline'));
 }
