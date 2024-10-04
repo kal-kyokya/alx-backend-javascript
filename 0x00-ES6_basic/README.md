@@ -12,7 +12,7 @@ This directory is home to all files required for successful completion of the fi
 	->	Allowed editors:
 			* vi,
    			* vim,
-      			* emacs,
+			* emacs,
  			* Visual Studio Code
 	->	All files should end with a new line
 	->	A README.md file, at the root of the folder of the project, is mandatory
