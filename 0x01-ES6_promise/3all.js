@@ -6,7 +6,7 @@ export default function handleProfileSignup() {
     uploadPhoto()
       .then((photo) => {
         str += `${photo.body} `;
-        return createUser();
+        return createUse();
       })
       .then((profile) => {
         str += `${profile.firstName} `;
