@@ -6,19 +6,22 @@ This directory is home to all files required for successful completion of the fi
 ### General
 
 	->	All files will be executed on:
-			Ubuntu 18.04 LTS
+			* Ubuntu 18.04 LTS
 				using:
-					NodeJS 12.11.x
+					* NodeJS 12.11.x
 	->	Allowed editors:
-			vi, vim, emacs, Visual Studio Code
+			* vi,
+   			* vim,
+      			* emacs,
+ 			* Visual Studio Code
 	->	All files should end with a new line
 	->	A README.md file, at the root of the folder of the project, is mandatory
 	->	All code should use:
-			The js extension
+			* The js extension
 	->	All code will be tested using:
-			The Jest Testing Framework
+			* The Jest Testing Framework
 	->	All code will be analyzed using:
-			The linter ESLint along with specific rules that will be provided
+			* The linter ESLint along with specific rules that will be provided
 	->	All functions must be exported
 
 ## Setup
@@ -42,7 +45,7 @@ In the project directory, install:
 * Babel
 * ESList
 
-...by using the package.json file and running npm install.
+...by using package.json file and running npm install.
 
 ### Important
 To not forget to run npm install from the terminal of the project folder to install all necessary project dependencies.
