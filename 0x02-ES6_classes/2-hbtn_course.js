@@ -8,4 +8,13 @@ export default class HolbertonCourse {
     this._length = length;
     this._students = students;
   }
+
+  get name() {return this._name;}
+  set name(input_name) {return this._name = input_name;}
+
+  get length() {return this._length;}
+  set length(input_length) {return this._length = input_length;}
+
+  get students() {return this._students;}
+  set students(input_students) {return this._students = input_students;}
 }
