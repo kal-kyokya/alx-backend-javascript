@@ -1,6 +1,6 @@
-# 0x02. ES6 Classes
+# 0x03. ES6 Data Manipulation
 
-This directory is home to all files required for successful completion of the third backend Specialization project given by ALX Africa to its Software Engineering program and focuses on the concept of Classes in Modern Javascript.
+This directory is home to all files required for successful completion of the fourth backend Specialization project given by ALX Africa to its Software Engineering program and focuses on the concept of Data Manipulation in Modern Javascript.
 
 ## Requirements
 ### General
