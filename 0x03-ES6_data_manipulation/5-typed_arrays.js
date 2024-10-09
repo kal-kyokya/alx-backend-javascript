@@ -5,5 +5,5 @@ export default function createInt8TypedArray(length, position, value) {
   const int8view = new Int8Array(length);
   int8view[position] = value;
 
-  return (dataView);
+  return (int8view);
 }
