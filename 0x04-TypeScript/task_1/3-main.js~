@@ -1,0 +1,21 @@
+var teacher = {
+    firstName: 'Jean-Paul',
+    fullTimeEmployee: false,
+    lastName: 'Kyokya',
+    location: 'Kinshasa',
+    course: 'football',
+};
+console.log(teacher);
+var teacher1 = {
+    firstName: 'Jean-Paul',
+    fullTimeEmployee: false,
+    lastName: 'Kyokya',
+    location: 'Kinshasa',
+    course: 'football',
+    numberOfReports: 4,
+};
+console.log(teacher1);
+function printTeacher(firstName, lastName) {
+    return ("".concat(firstName[0], ". ").concat(lastName));
+}
+console.log(printTeacher('Jean-Paul', 'Kyokya'));
