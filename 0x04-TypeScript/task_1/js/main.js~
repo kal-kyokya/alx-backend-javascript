@@ -1,8 +1,0 @@
-var teacher3 = {
-    firstName: 'Jean-Paul',
-    fullTimeEmployee: false,
-    lastName: 'Kyokya',
-    location: 'Kinshasa',
-    course: 'football',
-};
-console.log(teacher3);
