@@ -2,4 +2,6 @@
 
 module.exports = (message) => {
   process.stdout.write(`${message}\n`);
+  const array = __filename.toString().split('/')
+  console.log(array[array.length - 1]);
 };
