@@ -4,6 +4,7 @@ const { readFile } = require('fs');
 
 module.exports = function countStudents(database) {
   readFile(database, (err, data) => {
+
     if (err) throw new Error('Cannot load the database');
 
     const records = data.toString().split('\n');
