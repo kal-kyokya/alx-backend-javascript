@@ -1,5 +1,5 @@
 // This file contains a function that writes its input to 'STDOUT'
 
-module.exports = (message) => {
+module.exports = function displayMessage(message) => {
   process.stdout.write(`${message}\n`);
 };
