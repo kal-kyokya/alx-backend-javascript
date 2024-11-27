@@ -6,24 +6,35 @@ module.exports = function countStudents(database) {
   fs.readFile(database, (err, data) => {
     if (err) throw new Error('Cannot load the database');
 
-    const records = data.toString().split('\n');
-    console.log(`Number of students: ${records.length - 2}`);
+      const records = data
+	    .toString('utf-8')
+	    .trim()
+	    .split('\n');
+    console.log(`Number of students: ${records.length - 1}`);
 
-    const students = { CS: [], SWE: [] };
+      const studentGroups = {};
+      const dbFieldNames = records[0].split(',');
+      const studentPropNames = dbFieldNames.slice(0, dbFieldNames.length - 1);
 
-    for (let i = 1; i < records.length - 1; i += 1) {
-      const studentFields = records[i].split(',');
-      if (studentFields[studentFields.length - 1] === 'CS') {
-        students.CS.push(studentFields[0]);
+      for (const record of records.slice(1)) {
+	  const studentData = record.split(',');
+	  const studentPropValues = studentData.slice(0, studentData.length - 1);
+	  const field = studentData[studentData.length - 1];
+
+	  if (!Object.keys(studentGroups).includes(field)) {
+              studentGroups[field] = [];
+	  }
+
+	  const studentEntries = studentPropNames
+		.map((propName, index) => [propName, studentPropValues[index]]);
+
+	  studentGroups[field].push(Object.fromEntries(studentEntries));
       }
-      if (studentFields[studentFields.length - 1] === 'SWE') {
-        students.SWE.push(studentFields[0]);
-      }
-    }
 
-    const csList = students.CS.join(', ');
-    const sweList = students.SWE.join(', ');
-    console.log(`Number of students in CS: ${students.CS.length}. List: ${csList}`);
-    console.log(`Number of students in SWE: ${students.SWE.length}. List: ${sweList}`);
+      const lists = {};
+      for (const [key, value] of Object.entries(studentGroups)) {
+	  lists[key] = value.map((student) => student.firstname).join(', ');
+	  console.log(`Number of students in ${key}: ${value.length}. List: ${lists[key]}`);
+      }
   });
 };
