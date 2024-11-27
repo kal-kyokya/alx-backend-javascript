@@ -2,11 +2,11 @@
 
 const express = require('express');
 
-app = express();
+const app = express();
 
 app.get('/', (req, res) => {
-    res.end('Hello Holberton School !');
-})
+  res.end('Hello Holberton School !');
+});
 
 app.listen(1245);
 
