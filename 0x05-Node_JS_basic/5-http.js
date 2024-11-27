@@ -1,7 +1,7 @@
 // Script creating a small http server using the 'http' module
 
-const countStudents = require('./3-read_file_async');
 const http = require('http');
+const countStudents = require('./3-read_file_async');
 
 const PORT = 1245;
 const HOST = 'localhost';
