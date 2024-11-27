@@ -3,14 +3,14 @@
 const fs = require('fs');
 
 module.exports = function countStudents(database) {
-  if (!fs.existsSync(dataPath)) {
+  if (!fs.existsSync(database)) {
     throw new Error('Cannot load the database');
   }
-  if (!fs.statSync(dataPath).isFile()) {
+  if (!fs.statSync(database).isFile()) {
     throw new Error('Cannot load the database');
   }
   const fileLines = fs
-    .readFileSync(dataPath, 'utf-8')
+    .readFileSync(database, 'utf-8')
     .toString('utf-8')
     .trim()
     .split('\n');
