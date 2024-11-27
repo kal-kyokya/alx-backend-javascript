@@ -1,20 +1,62 @@
 // Script creating a small http server using the 'http' module
 
-const countStudent = require('./3-read_file_async');
+const countStudents = require('./3-read_file_async');
 const http = require('http');
 
-app = http.createServer((req, res) => {
-    if (req.url === '/' && req.method === 'GET') {
-	res.writeHead(200, {'content-type': 'text/plain'});
-	res.end('Hello Holberton School !');
+const PORT = 1245;
+const HOST = 'localhost';
+const app = http.createServer();
+const DB_FILE = process.argv.length > 2 ? process.argv[2] : '';
+
+const SERVER_ROUTE_HANDLERS = [
+  {
+    route: '/',
+    handler(_, res) {
+      const responseText = 'Hello Holberton School!';
+
+      res.setHeader('Content-Type', 'text/plain');
+      res.setHeader('Content-Length', responseText.length);
+      res.statusCode = 200;
+      res.write(Buffer.from(responseText));
+    },
+  },
+  {
+    route: '/students',
+    handler(_, res) {
+      const responseParts = ['This is the list of our students'];
+
+      countStudents(DB_FILE)
+        .then((report) => {
+          responseParts.push(report);
+          const responseText = responseParts.join('\n');
+          res.setHeader('Content-Type', 'text/plain');
+          res.setHeader('Content-Length', responseText.length);
+          res.statusCode = 200;
+          res.write(Buffer.from(responseText));
+        })
+        .catch((err) => {
+          responseParts.push(err instanceof Error ? err.message : err.toString());
+          const responseText = responseParts.join('\n');
+          res.setHeader('Content-Type', 'text/plain');
+          res.setHeader('Content-Length', responseText.length);
+          res.statusCode = 200;
+          res.write(Buffer.from(responseText));
+        });
+    },
+  },
+];
+
+app.on('request', (req, res) => {
+  for (const routeHandler of SERVER_ROUTE_HANDLERS) {
+    if (routeHandler.route === req.url) {
+      routeHandler.handler(req, res);
+      break;
     }
-    
-    if (req.url === '/students' && req.method === 'GET') {
-	res.writeHead(200, {'content-type': 'text/plain'});
-	res.end('This is the list of our students', countStudent(process.argv[2]));
-    }
+  }
 });
 
-app.listen(1245);
+app.listen(PORT, HOST, () => {
+  process.stdout.write(`Server listening at -> http://${HOST}:${PORT}\n`);
+});
 
 module.exports = app;
