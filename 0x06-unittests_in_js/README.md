@@ -18,5 +18,5 @@ This directory stores everything file/script required for completion of the seve
 	->	All code should use:
 			* The js extension
 	->	When running every test with:
-			* 'npm run test *.test.js'
+			* npm run test *.test.js
 				Everything should pass correctly without any warning or error
